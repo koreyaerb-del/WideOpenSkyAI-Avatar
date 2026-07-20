@@ -13,3 +13,140 @@
     --white: #FFFFFF; --gray: #8A95A8; --border: rgba(0,212,255,0.2);
   }
   html, body { height: 100%; background: var(--navy); color: var(--white); font-family: 'Inter', -apple-system, sans-serif; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+  body::after { content: ''; position: fixed; top: -20%; left: -10%; width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(0,212,255,0.06) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border); background: rgba(10,14,26,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .logo-area { display: flex; align-items: center; gap: 14px; }
+  .logo-icon { width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #00D4FF 0%, #0066FF 100%); display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 0 20px var(--cyan-glow); flex-shrink: 0; }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.08em; color: var(--white); line-height: 1.1; }
+  .logo-tag { font-size: 10px; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+  .header-right { display: flex; align-items: center; gap: 1.5rem; }
+  .header-link { font-size: 13px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .header-link:hover { color: var(--cyan); }
+  .header-cta { font-size: 13px; font-weight: 500; color: var(--navy); background: var(--cyan); padding: 8px 20px; border-radius: 6px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; }
+  .header-cta:hover { box-shadow: 0 0 20px var(--cyan-glow); transform: translateY(-1px); }
+  .hero { text-align: center; padding: 3.5rem 2rem 2rem; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); font-weight: 500; margin-bottom: 1.25rem; padding: 6px 16px; border: 1px solid var(--border); border-radius: 100px; background: var(--cyan-dim); }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+  .hero h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 1rem; }
+  .hero h1 span { background: linear-gradient(90deg, #00D4FF, #0099FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 16px; color: var(--gray); max-width: 540px; margin: 0 auto 2rem; line-height: 1.65; font-weight: 300; }
+  .avatar-section { flex: 1; padding: 0 2rem 3rem; max-width: 1100px; margin: 0 auto; width: 100%; }
+  .avatar-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: var(--navy-card); box-shadow: 0 0 0 1px rgba(0,212,255,0.1), 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(0,212,255,0.05); }
+  .avatar-wrapper::before, .avatar-wrapper::after { content: ''; position: absolute; width: 40px; height: 40px; z-index: 10; pointer-events: none; }
+  .avatar-wrapper::before { top: 0; left: 0; border-top: 2px solid var(--cyan); border-left: 2px solid var(--cyan); border-radius: 20px 0 0 0; }
+  .avatar-wrapper::after { bottom: 0; right: 0; border-bottom: 2px solid var(--cyan); border-right: 2px solid var(--cyan); border-radius: 0 0 20px 0; }
+  .avatar-topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(0,212,255,0.05); border-bottom: 1px solid var(--border); }
+  .avatar-status { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--cyan); letter-spacing: 0.08em; font-weight: 500; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #00FF88; box-shadow: 0 0 8px #00FF88; animation: pulse 2s infinite; }
+  .avatar-mic-note { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--cyan); background: var(--cyan-dim); padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); }
+  .avatar-frame { width: 100%; aspect-ratio: 16/9; border: none; display: block; background: var(--navy); }
+  .tips-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
+  .tip { background: var(--navy-card); padding: 16px 20px; display: flex; align-items: flex-start; gap: 12px; }
+  .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .tip-text { font-size: 12px; color: var(--gray); line-height: 1.5; }
+  .tip-text strong { color: var(--white); display: block; margin-bottom: 2px; font-size: 12px; }
+  .questions-section { max-width: 1100px; margin: 2rem auto 0; padding: 0 2rem; width: 100%; }
+  .questions-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; font-weight: 500; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { font-size: 13px; color: var(--cyan); border: 1px solid var(--border); background: var(--cyan-dim); padding: 8px 16px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
+  .chip:hover { background: rgba(0,212,255,0.25); border-color: var(--cyan); box-shadow: 0 0 12px var(--cyan-glow); transform: translateY(-1px); }
+  footer { margin-top: 3rem; padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-left { font-size: 12px; color: var(--gray); }
+  .footer-left a { color: var(--cyan); text-decoration: none; }
+  .footer-right { display: flex; gap: 1.5rem; }
+  .footer-link { font-size: 12px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+  .footer-link:hover { color: var(--cyan); }
+  @media (max-width: 768px) { header { padding: 1rem 1.25rem; } .hero { padding: 2.5rem 1.25rem 1.5rem; } .avatar-section { padding: 0 1.25rem 2rem; } .questions-section { padding: 0 1.25rem; } .tips-bar { grid-template-columns: 1fr; } footer { padding: 1.25rem; flex-direction: column; align-items: flex-start; } .hero h1 { font-size: 1.75rem; } }
+  @media (max-width: 480px) { .header-link { display: none; } .logo-name { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="logo-area">
+      <div class="logo-icon">🌐</div>
+      <div class="logo-text">
+        <span class="logo-name">WIDE OPEN SKY AI</span>
+        <span class="logo-tag">AI Consulting &amp; Avatars</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <a href="https://www.wideopenskyai.com" class="header-link">← Back to Website</a>
+      <a href="https://www.wideopenskyai.com/#contact" class="header-cta">Free Consultation</a>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="hero-eyebrow">Live AI Avatar &nbsp;·&nbsp; Voice Enabled</div>
+    <h1>Meet Your AI Assistant<br><span>Ask Anything. Get Answers.</span></h1>
+    <p class="hero-sub">Interact live with our AI assistant using your voice or text. Ask about our services, pricing, how AI can help your business, or anything else on your mind.</p>
+  </div>
+
+  <div class="avatar-section">
+    <div class="avatar-wrapper">
+      <div class="avatar-topbar">
+        <div class="avatar-status">
+          <span class="status-dot"></span>
+          LIVE &nbsp;·&nbsp; Wide Open Sky AI Assistant
+        </div>
+        <div class="avatar-mic-note">🎙️ Microphone enabled — speak or type</div>
+      </div>
+      <iframe
+        src="https://embed.liveavatar.com/v1/4105cefa-aa0d-4296-b95e-dad727111710?orientation=horizontal"
+        allow="microphone; camera"
+        title="Wide Open Sky AI Live Avatar"
+        class="avatar-frame"
+        allowfullscreen>
+      </iframe>
+      <div class="tips-bar">
+        <div class="tip">
+          <span class="tip-icon">🎙️</span>
+          <div class="tip-text"><strong>Voice Interaction</strong>Click the microphone icon inside the avatar and speak naturally. The AI responds in real time.</div>
+        </div>
+        <div class="tip">
+          <span class="tip-icon">⌨️</span>
+          <div class="tip-text"><strong>Text Chat</strong>Prefer typing? Use the text field at the bottom of the avatar to send your question.</div>
+        </div>
+        <div class="tip">
+          <span class="tip-icon">🔒</span>
+          <div class="tip-text"><strong>Privacy First</strong>Your conversation is confidential. Microphone access is used only during this session.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="questions-section">
+    <div class="questions-label">Try asking</div>
+    <div class="chips">
+      <span class="chip">What is an AI Live Avatar?</span>
+      <span class="chip">Can you clone me as an avatar?</span>
+      <span class="chip">How much does this cost?</span>
+      <span class="chip">How can AI generate leads for my business?</span>
+      <span class="chip">How quickly can I get started?</span>
+      <span class="chip">What industries do you work with?</span>
+      <span class="chip">How does AI consulting work?</span>
+      <span class="chip">What is the ROI of using AI?</span>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      &copy; 2026 <a href="https://www.wideopenskyai.com">Wide Open Sky AI</a> &nbsp;·&nbsp;
+      Prescott Valley, Arizona &nbsp;·&nbsp;
+      <a href="tel:8335387824">(833) 538-7824</a> &nbsp;·&nbsp;
+      <a href="mailto:hello@wideopensky.ai">hello@wideopensky.ai</a>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.wideopenskyai.com" class="footer-link">Main Website</a>
+      <a href="https://www.wideopenskyai.com/#contact" class="footer-link">Contact Us</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -18,39 +18,33 @@
   body::after { content: ''; position: fixed; top: -20%; left: -10%; width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(0,212,255,0.06) 0%, transparent 70%); pointer-events: none; z-index: 0; }
   .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
 
-  /* HEADER */
-  header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; border-bottom: 1px solid var(--border); background: rgba(10,14,26,0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
-  .logo-area { display: flex; align-items: center; gap: 14px; }
-  .logo-icon { width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg, #00D4FF 0%, #0066FF 100%); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-  .logo-text { display: flex; flex-direction: column; }
-  .logo-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.08em; color: var(--white); line-height: 1.1; }
-  .logo-tag { font-size: 10px; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; border-bottom: 1px solid var(--border); background: rgba(10,14,26,0.92); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
+  .logo-area { display: flex; align-items: center; }
+  .logo-img { height: 52px; width: auto; display: block; }
   .header-right { display: flex; align-items: center; gap: 1.5rem; }
   .header-link { font-size: 13px; color: var(--gray); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
   .header-link:hover { color: var(--cyan); }
   .header-cta { font-size: 13px; font-weight: 600; color: var(--navy); background: var(--green); padding: 9px 20px; border-radius: 6px; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; }
   .header-cta:hover { opacity: 0.88; }
 
-  /* HERO */
   .hero { text-align: center; padding: 3rem 2rem 1.5rem; }
   .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); font-weight: 500; margin-bottom: 1.25rem; padding: 6px 16px; border: 1px solid var(--border); border-radius: 100px; background: var(--cyan-dim); }
   .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
   .hero h1 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4.5vw, 3.2rem); line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 0.5rem; }
   .hero h1 span { background: linear-gradient(90deg, #00D4FF, #0099FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .hero-sub { font-size: 16px; color: var(--gray); max-width: 520px; margin: 0 auto 0.5rem; line-height: 1.65; font-weight: 300; }
-  .hero-sub2 { font-size: 15px; color: var(--green); font-weight: 500; margin-bottom: 1.5rem; }
+  .hero-sub2 { font-size: 16px; color: var(--green); font-weight: 600; margin-bottom: 0.75rem; }
+  .hero-sub { font-size: 15px; color: var(--gray); max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.65; font-weight: 300; }
 
-  /* INSTRUCTIONS BANNER */
   .instructions-banner { max-width: 1100px; margin: 0 auto 1.5rem; padding: 0 2rem; width: 100%; }
   .instructions-box { background: linear-gradient(135deg, rgba(27,175,122,0.12) 0%, rgba(27,175,122,0.04) 100%); border: 2px solid rgba(27,175,122,0.5); border-radius: 14px; padding: 1.25rem 1.75rem; display: flex; align-items: flex-start; gap: 1rem; }
   .inst-icon { font-size: 32px; flex-shrink: 0; margin-top: 2px; }
-  .inst-content h3 { font-size: 15px; font-weight: 600; color: var(--green); margin-bottom: 6px; letter-spacing: 0.02em; }
-  .inst-content p { font-size: 13px; color: var(--gray); line-height: 1.7; }
+  .inst-content h3 { font-size: 15px; font-weight: 600; color: var(--green); margin-bottom: 8px; letter-spacing: 0.02em; }
+  .inst-content p { font-size: 13px; color: var(--gray); line-height: 1.75; }
   .inst-content strong { color: var(--white); }
-  .chat-now-arrow { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; background: var(--green); color: var(--navy); font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: 8px; text-decoration: none; }
+  .inst-content u { text-decoration: underline; }
+  .chat-now-arrow { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; background: var(--green); color: var(--navy); font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 8px; text-decoration: none; }
 
-  /* AVATAR */
   .avatar-section { flex: 1; padding: 0 2rem 2rem; max-width: 1100px; margin: 0 auto; width: 100%; }
   .avatar-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: var(--navy-card); box-shadow: 0 0 0 1px rgba(0,212,255,0.1), 0 40px 80px rgba(0,0,0,0.6); }
   .avatar-wrapper::before, .avatar-wrapper::after { content: ''; position: absolute; width: 40px; height: 40px; z-index: 10; pointer-events: none; }
@@ -62,23 +56,20 @@
   .avatar-mic-note { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--cyan); background: var(--cyan-dim); padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); }
   .avatar-frame { width: 100%; aspect-ratio: 16/9; border: none; display: block; background: var(--navy); }
 
-  /* TIPS BAR */
   .tips-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
   .tip { background: var(--navy-card); padding: 16px 20px; display: flex; align-items: flex-start; gap: 12px; }
   .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-  .tip-text { font-size: 12px; color: var(--gray); line-height: 1.5; }
-  .tip-text strong { color: var(--white); display: block; margin-bottom: 2px; font-size: 12px; }
+  .tip-text { font-size: 12px; color: var(--gray); line-height: 1.6; }
+  .tip-text strong { color: var(--white); display: block; margin-bottom: 4px; font-size: 12px; }
   .tip-text a { color: var(--cyan); text-decoration: none; }
   .tip-text a:hover { text-decoration: underline; }
 
-  /* QUESTION CHIPS */
   .questions-section { max-width: 1100px; margin: 1.5rem auto 0; padding: 0 2rem; width: 100%; }
   .questions-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; font-weight: 500; }
   .chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip { font-size: 13px; color: var(--cyan); border: 1px solid var(--border); background: var(--cyan-dim); padding: 8px 16px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
   .chip:hover { background: rgba(0,212,255,0.25); border-color: var(--cyan); transform: translateY(-1px); }
 
-  /* FOOTER */
   footer { margin-top: 2.5rem; padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   .footer-left { font-size: 12px; color: var(--gray); }
   .footer-left a { color: var(--cyan); text-decoration: none; }
@@ -86,9 +77,9 @@
   .footer-link { font-size: 12px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
   .footer-link:hover { color: var(--cyan); }
 
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     header { padding: 1rem 1.25rem; }
+    .logo-img { height: 40px; }
     .hero { padding: 2rem 1.25rem 1rem; }
     .avatar-section { padding: 0 1.25rem 2rem; }
     .instructions-banner { padding: 0 1.25rem; }
@@ -99,21 +90,21 @@
   }
   @media (max-width: 480px) {
     .header-link { display: none; }
-    .logo-name { font-size: 15px; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HEADER -->
   <header>
     <div class="logo-area">
-      <div class="logo-icon">🌐</div>
-      <div class="logo-text">
-        <span class="logo-name">WIDE OPEN SKY AI</span>
-        <span class="logo-tag">AI Consulting &amp; Avatars</span>
-      </div>
+      <a href="https://www.wideopenskyai.com">
+        <img
+          src="https://static.wixstatic.com/media/0bfd19_bf2939f35fe94624bb24984933f6aa74~mv2.png/v1/fill/w_587,h_124,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo.png"
+          alt="Wide Open Sky AI"
+          class="logo-img"
+        >
+      </a>
     </div>
     <div class="header-right">
       <a href="https://www.wideopenskyai.com" class="header-link">← Back to Website</a>
@@ -121,7 +112,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-eyebrow">Live AI Avatar &nbsp;·&nbsp; Voice Enabled</div>
     <h1>Meet Your AI Assistant<br><span>Ask Anything. Get Answers.</span></h1>
@@ -129,7 +119,6 @@
     <p class="hero-sub">Interact live with our AI assistant using your voice or text. Ask about our services, pricing, how AI can help your business, or anything else on your mind.</p>
   </div>
 
-  <!-- INSTRUCTIONS BANNER -->
   <div class="instructions-banner">
     <div class="instructions-box">
       <div class="inst-icon">🎙️</div>
@@ -143,7 +132,6 @@
     </div>
   </div>
 
-  <!-- AVATAR -->
   <div class="avatar-section">
     <div class="avatar-wrapper" id="avatar-frame">
       <div class="avatar-topbar">
@@ -188,7 +176,6 @@
     </div>
   </div>
 
-  <!-- SUGGESTED QUESTIONS -->
   <div class="questions-section">
     <div class="questions-label">Try asking</div>
     <div class="chips">
@@ -203,7 +190,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-left">
       &copy; 2026 <a href="https://www.wideopenskyai.com">Wide Open Sky AI</a> &nbsp;·&nbsp;

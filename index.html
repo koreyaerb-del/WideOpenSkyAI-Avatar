@@ -17,7 +17,6 @@
   body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
   body::after { content: ''; position: fixed; top: -20%; left: -10%; width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(0,212,255,0.06) 0%, transparent 70%); pointer-events: none; z-index: 0; }
   .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
-
   header { display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; border-bottom: 1px solid var(--border); background: rgba(10,14,26,0.92); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100; }
   .logo-area { display: flex; align-items: center; }
   .logo-img { height: 52px; width: auto; display: block; }
@@ -26,7 +25,6 @@
   .header-link:hover { color: var(--cyan); }
   .header-cta { font-size: 13px; font-weight: 600; color: var(--navy); background: var(--green); padding: 9px 20px; border-radius: 6px; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; }
   .header-cta:hover { opacity: 0.88; }
-
   .hero { text-align: center; padding: 3rem 2rem 1.5rem; }
   .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); font-weight: 500; margin-bottom: 1.25rem; padding: 6px 16px; border: 1px solid var(--border); border-radius: 100px; background: var(--cyan-dim); }
   .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
@@ -35,7 +33,6 @@
   .hero h1 span { background: linear-gradient(90deg, #00D4FF, #0099FF); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .hero-sub2 { font-size: 16px; color: var(--green); font-weight: 600; margin-bottom: 0.75rem; }
   .hero-sub { font-size: 15px; color: var(--gray); max-width: 520px; margin: 0 auto 1.5rem; line-height: 1.65; font-weight: 300; }
-
   .instructions-banner { max-width: 1100px; margin: 0 auto 1.5rem; padding: 0 2rem; width: 100%; }
   .instructions-box { background: linear-gradient(135deg, rgba(27,175,122,0.12) 0%, rgba(27,175,122,0.04) 100%); border: 2px solid rgba(27,175,122,0.5); border-radius: 14px; padding: 1.25rem 1.75rem; display: flex; align-items: flex-start; gap: 1rem; }
   .inst-icon { font-size: 32px; flex-shrink: 0; margin-top: 2px; }
@@ -44,7 +41,12 @@
   .inst-content strong { color: var(--white); }
   .inst-content u { text-decoration: underline; }
   .chat-now-arrow { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; background: var(--green); color: var(--navy); font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 8px; text-decoration: none; }
-
+  /* ---- Overview video section (between the green box and the avatar) ---- */
+  .video-section { max-width: 1100px; margin: 0 auto; padding: 0 2rem 1.75rem; width: 100%; }
+  .video-label { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); font-weight: 500; margin-bottom: 0.85rem; }
+  .video-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+  .video-wrapper { position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); background: var(--navy-card); box-shadow: 0 0 0 1px rgba(0,212,255,0.08), 0 24px 60px rgba(0,0,0,0.5); }
+  .video-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
   .avatar-section { flex: 1; padding: 0 2rem 2rem; max-width: 1100px; margin: 0 auto; width: 100%; }
   .avatar-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: var(--navy-card); box-shadow: 0 0 0 1px rgba(0,212,255,0.1), 0 40px 80px rgba(0,0,0,0.6); }
   .avatar-wrapper::before, .avatar-wrapper::after { content: ''; position: absolute; width: 40px; height: 40px; z-index: 10; pointer-events: none; }
@@ -55,32 +57,37 @@
   .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #00FF88; box-shadow: 0 0 8px #00FF88; animation: pulse 2s infinite; }
   .avatar-mic-note { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--cyan); background: var(--cyan-dim); padding: 5px 12px; border-radius: 100px; border: 1px solid var(--border); }
   .avatar-frame { width: 100%; aspect-ratio: 16/9; border: none; display: block; background: var(--navy); }
-
-  .tips-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
+  .tips-bar { display: grid; grid-template-columns: 2fr 1fr; gap: 1px; background: var(--border); border-top: 1px solid var(--border); }
   .tip { background: var(--navy-card); padding: 16px 20px; display: flex; align-items: flex-start; gap: 12px; }
   .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
   .tip-text { font-size: 12px; color: var(--gray); line-height: 1.6; }
-  .tip-text strong { color: var(--white); display: block; margin-bottom: 4px; font-size: 12px; }
+  .tip-text strong { color: var(--white); font-weight: 600; }
+  .tip-text .tip-title { color: var(--white); display: block; margin-bottom: 4px; font-size: 12px; font-weight: 600; }
   .tip-text a { color: var(--cyan); text-decoration: none; }
   .tip-text a:hover { text-decoration: underline; }
-
+  /* ---- Icon legend inside the voice/text tip ---- */
+  .icon-key { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 14px; }
+  .ikey { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; }
+  .ikey svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .ikey.accent { color: var(--cyan); }
+  .ikey.muted { color: #FF6B6B; }
+  .ikey b { font-weight: 500; color: var(--gray); }
   .questions-section { max-width: 1100px; margin: 1.5rem auto 0; padding: 0 2rem; width: 100%; }
   .questions-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 1rem; font-weight: 500; }
   .chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .chip { font-size: 13px; color: var(--cyan); border: 1px solid var(--border); background: var(--cyan-dim); padding: 8px 16px; border-radius: 100px; cursor: pointer; transition: all 0.2s; }
   .chip:hover { background: rgba(0,212,255,0.25); border-color: var(--cyan); transform: translateY(-1px); }
-
   footer { margin-top: 2.5rem; padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   .footer-left { font-size: 12px; color: var(--gray); }
   .footer-left a { color: var(--cyan); text-decoration: none; }
   .footer-right { display: flex; gap: 1.5rem; }
   .footer-link { font-size: 12px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
   .footer-link:hover { color: var(--cyan); }
-
   @media (max-width: 768px) {
     header { padding: 1rem 1.25rem; }
     .logo-img { height: 40px; }
     .hero { padding: 2rem 1.25rem 1rem; }
+    .video-section { padding: 0 1.25rem 1.5rem; }
     .avatar-section { padding: 0 1.25rem 2rem; }
     .instructions-banner { padding: 0 1.25rem; }
     .questions-section { padding: 0 1.25rem; }
@@ -95,7 +102,6 @@
 </head>
 <body>
 <div class="page">
-
   <header>
     <div class="logo-area">
       <a href="https://www.wideopenskyai.com">
@@ -111,14 +117,12 @@
       <a href="https://www.wideopenskyai.com/blank-5" class="header-cta">Free Consultation</a>
     </div>
   </header>
-
   <div class="hero">
     <div class="hero-eyebrow">Live AI Avatar &nbsp;·&nbsp; Voice Enabled</div>
-    <h1>Meet Your AI Assistant<br><span>Ask Anything. Get Answers.</span></h1>
+    <h1>Meet Your LIVE AI Assistant<br><span>Ask Anything. Get Answers.</span></h1>
     <p class="hero-sub2">Imagine Your Own Avatar.</p>
     <p class="hero-sub">Interact live with our AI assistant using your voice or text. Ask about our services, pricing, how AI can help your business, or anything else on your mind.</p>
   </div>
-
   <div class="instructions-banner">
     <div class="instructions-box">
       <div class="inst-icon">🎙️</div>
@@ -131,7 +135,18 @@
       </div>
     </div>
   </div>
-
+  <!-- ===== Overview video (sits between the green box and the avatar) ===== -->
+  <div class="video-section">
+    <div class="video-label">Watch · Quick Overview</div>
+    <div class="video-wrapper">
+      <iframe class="video-frame"
+        src="https://www.youtube.com/embed/ZWaU7aYC22U?rel=0"
+        title="Wide Open Sky AI — Overview"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
   <div class="avatar-section">
     <div class="avatar-wrapper" id="avatar-frame">
       <div class="avatar-topbar">
@@ -141,7 +156,6 @@
         </div>
         <div class="avatar-mic-note">🎙️ Microphone enabled — speak or type</div>
       </div>
-
       <iframe
         src="https://embed.liveavatar.com/v1/4105cefa-aa0d-4296-b95e-dad727111710?orientation=horizontal"
         allow="microphone; camera"
@@ -149,33 +163,42 @@
         class="avatar-frame"
         allowfullscreen>
       </iframe>
-
       <div class="tips-bar">
         <div class="tip">
           <span class="tip-icon">🎙️</span>
           <div class="tip-text">
-            <strong>Voice Interaction</strong>
-            Select the language you wish and then click the blue <strong>'CHAT NOW'</strong> icon to begin speaking. Make sure your microphone is on and not muted. The AI responds in real time.
-          </div>
-        </div>
-        <div class="tip">
-          <span class="tip-icon">⌨️</span>
-          <div class="tip-text">
-            <strong>Prefer typing your questions in a chat box?</strong>
-            <a href="https://www.wideopenskyai.com">Click here to go back to the HOME PAGE</a> — scroll to the AI avatar there and enter your questions in the text box.
+            <strong class="tip-title">Talking to your avatar — voice or text</strong>
+            Your avatar starts in <strong>Voice Mode</strong>, so just ask your questions out loud. Make sure your microphone is on — if the mic icon has a <strong>red line through it</strong>, it's muted and the avatar can't hear you; tap it once to turn it back on. Prefer to type? Tap the <strong>text</strong> icon in the avatar's top-right corner to switch to the message box, and the <strong>voice</strong> icon to switch back.
+            <div class="icon-key">
+              <span class="ikey accent" title="Microphone on">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5a3 3 0 0 1 6 0v5a3 3 0 0 1 -6 0z"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M8 21l8 0"/><path d="M12 17l0 4"/></svg>
+                <b>Mic on</b>
+              </span>
+              <span class="ikey muted" title="Microphone muted">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="#8A95A8"><path d="M9 5a3 3 0 0 1 6 0v5a3 3 0 0 1 -.4 1.5"/><path d="M5 10a7 7 0 0 0 10.9 5.8"/><path d="M8 21l8 0"/><path d="M12 17l0 4"/></g><path d="M4 4l16 16" stroke="#FF4D4D"/></svg>
+                <b>Muted — tap to unmute</b>
+              </span>
+              <span class="ikey accent" title="Switch to text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l-3 -3h-2a3 3 0 0 1 -3 -3v-6a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-2l-3 3"/><path d="M8 9l8 0"/><path d="M8 13l5 0"/></svg>
+                <b>Text</b>
+              </span>
+              <span class="ikey accent" title="Switch to voice">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 10v4"/><path d="M10 7v10"/><path d="M14 5v14"/><path d="M18 9v6"/></svg>
+                <b>Voice</b>
+              </span>
+            </div>
           </div>
         </div>
         <div class="tip">
           <span class="tip-icon">🔒</span>
           <div class="tip-text">
-            <strong>Privacy First</strong>
+            <strong class="tip-title">Privacy First</strong>
             Your conversation is confidential. Microphone access is used only during this session.
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="questions-section">
     <div class="questions-label">Try asking</div>
     <div class="chips">
@@ -189,7 +212,6 @@
       <span class="chip">What is the ROI of using AI?</span>
     </div>
   </div>
-
   <footer>
     <div class="footer-left">
       &copy; 2026 <a href="https://www.wideopenskyai.com">Wide Open Sky AI</a> &nbsp;·&nbsp;
@@ -202,7 +224,6 @@
       <a href="https://www.wideopenskyai.com/blank-5" class="footer-link">Contact Us</a>
     </div>
   </footer>
-
 </div>
 </body>
 </html>
